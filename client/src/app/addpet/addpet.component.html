@@ -1,0 +1,47 @@
+<h3>Know of a pet needing a home?</h3>
+
+<form (submit)="create()">
+
+
+
+
+	<div class="card text-white bg-danger mb-3"  *ngIf= "errors.length > 0">
+		<div class="card-header">Hey! Pay attention!</div>
+			<div class="card-body">
+				<h5 class="card-title">You idiot...</h5>
+					<p *ngFor= "let error of errors">
+						{{error}}
+					</p>
+			</div>
+	</div>
+
+
+	<div class = "form-group">
+		<label for="name">Pet name:</label>
+		<input type = "text" id = "name" class = "form-control" name = "pet.name" [(ngModel)]="pet.name">
+
+		<label for="type">Pet type:</label>
+		<input type = "text" id = "type" class = "form-control" name = "pet.type" [(ngModel)]="pet.type">
+
+		<label for="description">Description:</label>
+		<input type = "text" id = "description" class = "form-control" name = "pet.description" [(ngModel)]="pet.description">
+
+		Skills:
+		<div class = "container">
+			<label for="skill1">Skill 1:</label>
+			<input type = "text" id = "skill1" class = "form-control" name = "pet.skill1" [(ngModel)]="pet.skill1">
+
+			<label for="skill2">Skill 2:</label>
+			<input type = "text" id = "skill2" class = "form-control" name = "pet.skill2" [(ngModel)]="pet.skill2">
+
+			<label for="skill3">Skill 3:</label>
+			<input type = "text" id = "skill3" class = "form-control" name = "pet.skill3" [(ngModel)]="pet.skill3">
+		</div>
+
+		<div class = "container">
+			<input type = "submit" value="Add Pet" class = "btn btn-info m-3">
+			<button (click)="cancel()" type = "button" class = "btn btn-info m-3">Cancel</button>
+		</div>
+	</div>
+</form>
+

@@ -1,0 +1,46 @@
+<div class = "container">
+	<div class = "row">
+		<div class = "col-3">
+			<h3>Details about {{pet.name}}</h3>
+		</div>
+		<div class = "col-9">
+			<a class = "text-right" [routerLink]="['']">Home</a>
+		</div>
+	</div>
+	<div class = "row">
+		<div class = "col-3">
+			<h3>Pet type:</h3>
+		</div>
+		<div class = "col-9">
+			<p>{{pet.type}}</p>
+		</div>
+	</div>
+	<div class = "row">
+		<div class = "col-3">
+			<h3>Pet Description:</h3>
+		</div>
+		<div class = "col-9">
+			<p>{{pet.description}}</p>
+		</div>
+	</div>
+	<!-- <h3>Description:</h3><p>{{pet.description}}</p> -->
+	<div class = "row">
+		<div class = "col-3">
+			<h3>Skills:</h3>
+		</div>
+		<div class = "col-9">
+			<p *ngFor="let skill of pet.skills">{{skill}}</p>
+		</div>
+	</div>
+	<div class = "row">
+		<div class = "col-3">
+			<h3>Likes:</h3>
+		</div>
+		<div class = "col-9">
+			<p>{{pet.likes}}</p>
+		</div>
+	</div>
+
+	<button (click)="like()" type = "button" class = "btn btn-info mr-3" *ngIf="liked == false">Like this pet</button>
+	<button (click)="adopt()" type = "button" class = "btn btn-secondary ml-3">Adopt this pet!</button>
+</div>
